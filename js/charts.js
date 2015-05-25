@@ -23,7 +23,8 @@ function drawChart() {
                    'width':'95%',
                    'is3D' : true,
                    'height':400,
-                   'legend': {'position':'bottom'}};
+                   'legend': {'position':'bottom'},
+		   'colors': ['#66A1D2','#FD7279']};
     
     // Instantiate and draw our chart, passing in some options.
     var chart = new google.visualization.PieChart(document.getElementById('total'));
@@ -61,8 +62,9 @@ function drawChart() {
 			  "duration": 1000,
 			  "easing": 'out'},
                'width':'95%',
-               'height':500,
-               'legend': {'position':'bottom'} };
+               'height': 600,
+               'legend': {'position':'bottom'},
+	       'colors': ['#66A1D2','#FD7279'] };
     
     // Instantiate and draw our chart, passing in some options.
     var chart_sectores = new google.visualization.BarChart(document.getElementById('sectores'));
