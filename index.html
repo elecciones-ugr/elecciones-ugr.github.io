@@ -41,7 +41,22 @@
     <h3 class='text-centered'><div class="btn btn-silver btn-outline btn-round text-centered">
 	Esta web está hecha desde la <a href='http://osl.ugr.es'>Oficina de Software Libre de la UGR</a> y se puede <a href='http://github.com/elecciones-ugr'>descargar, copiar y adaptar</a> como software libre que es. </div></h3>
     <script type='text/javascript'>
-$(function() { 
+$(function() {
+$.ajax({
+         url: 'http://elecciones-ugr.github.io/resultados.jsonp',
+            dataType: 'jsonp',
+            jsonp: 'jsoncallback',
+            jsonpCallback: 'callbackFunction',
+            timeout: 5000,
+            success: function(data, status){
+        parse_results( data ); 
+                 drawChart();
+                //AQUI
+            },
+            error: function(){
+
+            }
+        }); 
     $('#total').css('opacity',escrutado/100);
     $('#sectores').css('opacity',escrutado/100);
 });    
